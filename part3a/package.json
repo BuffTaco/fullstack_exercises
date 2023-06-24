@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf build && cd C:\\Users\\jiayu\\OneDrive\\Documents\\GitHub\\fullstack_exercises\\part2a && npm run build && cp -r build C:\\Users\\jiayu\\OneDrive\\Documents\\GitHub\\fullstack_exercises\\part3a",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
+
   },
   "keywords": [],
   "author": "",
