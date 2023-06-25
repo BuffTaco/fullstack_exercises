@@ -9,14 +9,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:ui": "rm -rf build && cd C:\\Users\\jiayu\\OneDrive\\Documents\\GitHub\\fullstack_exercises\\part2a && npm run build && cp -r build C:\\Users\\jiayu\\OneDrive\\Documents\\GitHub\\fullstack_exercises\\part3a",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
-
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
