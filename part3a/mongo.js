@@ -14,11 +14,16 @@ mongoose.set('strictQuery',false)
 mongoose.connect(url)
 
 const noteSchema = new mongoose.Schema({
-  content: String,
+  content: {
+    type: String,
+    minLength: 5,
+    required: true
+  },
   important: Boolean,
 })
 
 const Note = mongoose.model('Note', noteSchema)
+
 
 Note.find({important:true}).then(result => {
     result.forEach(note => {
@@ -27,8 +32,8 @@ Note.find({important:true}).then(result => {
     mongoose.connection.close()
 })
 /*const note = new Note({
-  content: 'Note #2',
-  important: false,
+  content: 'tesing',
+  important: true,
 })
 
 note.save().then(result => {
