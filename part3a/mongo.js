@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const mongoose = require('mongoose')
 
 if (process.argv.length<3) {
@@ -8,7 +9,7 @@ if (process.argv.length<3) {
 const password = process.argv[2]
 
 
-const url = `mongodb+srv://jiayuequan:${password}@fullstackopen.woyegxs.mongodb.net/noteApp?retryWrites=true&w=majority`
+const url = `mongodb+srv://jiayuequan:${password}@fullstackopen.woyegxs.mongodb.net/testNoteApp?retryWrites=true&w=majority`
 
 mongoose.set('strictQuery',false)
 mongoose.connect(url)
@@ -23,7 +24,6 @@ const noteSchema = new mongoose.Schema({
 })
 
 const Note = mongoose.model('Note', noteSchema)
-
 
 Note.find({ important:true }).then(result => {
 	result.forEach(note => {
